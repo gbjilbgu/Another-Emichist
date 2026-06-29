@@ -41,8 +41,15 @@ async def on_message(message):
                     if an[len(an)-6:len(an)] == " hhhh ":
                         an = an[0:len(an)-6]
                         an = an + " hmhm mmmm "
+                elif len(an) == 5:
+                    if an[0:5] == "hhhh ":
+                        an = ""
+                        an = an + "hmhm mmmm "
             except:
                 continue
+        if an[len(an)-5:len(an)] == " hhhh":
+            an = an[0:len(an)-5]
+            an = an + " hmhm mmmm"
         await message.channel.send(an)
     elif mes[0:3] == "ade":
         adi = mes[4:-1]+mes[-1]
