@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import morse_talk as mt
+from MorseCodePy import encode,decode
 from flask import Flask
 from threading import Thread
 import os
@@ -22,7 +22,7 @@ async def on_message(message):
     if mes == "ahola":
         await message.channel.send("mmmm m mhmm mhmm hhh mmhmm hh hmhh mmhmm hmm m mh mhm mmhmm m hh mm hmhm mmmm mm mmm h mmhmm mmhm mhm mm m hm hmm mmhmm mmmm hhh mhh mhhhhm mmm mmhmm hhm hhh mm hm hhm mmhhmm")
     elif mes[0:3] == "aen":
-        adi = mt.encode(mes[4:-1]+mes[-1])
+        adi = encode(mes[4:-1]+mes[-1],language = 'english')
         #print(adi)
         cou = 0
         an = ""
@@ -66,7 +66,7 @@ async def on_message(message):
             else:
                 an = an+"       "
         #raise ValueError(an)
-        an = mt.decode(an+"    ").lower()
+        an = decode(an,language = 'english').lower()
         await message.channel.send(an)
     elif mes[0:3] == "aus":
         await message.channel.send("""# Here are some frequently-used line:
