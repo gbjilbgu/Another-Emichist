@@ -10,7 +10,7 @@ Functions to encode strings
 __all__ = ['encode']
 
 morsetab = {
-        '$':'..-..',
+        ':':'---...',
         'A': '.-',
         'B': '-...',
         'C': '-.-.',
