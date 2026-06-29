@@ -77,6 +77,7 @@ async def on_message(message):
         await message.channel.send("**Agree/Disagree**")
         await message.channel.send("hmhh m mh mmmm")
         await message.channel.send("hm mh mmmm")
+        await message.channel.send("**Holy**")
     await bot.process_commands(message)
 app = Flask('')
 
