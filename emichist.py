@@ -65,7 +65,7 @@ async def on_message(message):
                     an = an
             else:
                 an = an+"       "
-        #print(an)
+        print(an)
         an = mt.decode(an).lower()
         await message.channel.send(an)
     elif mes[0:3] == "aus":
