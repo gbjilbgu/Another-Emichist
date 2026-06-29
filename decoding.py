@@ -7,7 +7,7 @@ Functions to decode messages
 #    All rights reserved.
 #    GNU license.
 
-from . import encoding
+import encoding
 
 __all__ = ['decode']
 
