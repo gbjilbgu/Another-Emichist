@@ -24,47 +24,34 @@ async def on_message(message):
     elif mes[0:3] == "aen":
         adi = encode(mes[4:-1]+mes[-1],language = 'english')
         #print(adi)
-        cou = 0
+        #cou = 0
         an = ""
+        #adi = adi.split()
         for x in adi:
-            if x != " ":
-                if cou == 7:
-                    an = an + " mmhmm "
-                    #await mem.edit(content = an)
-                    cou = 0
-                elif cou == 3:
-                    cou = 0
-                    an = an + " "
-                    #await mem.edit(content = an)
-                if x == ".":
-                    an = an + "m"
-                    #await mem.edit(content = an)
-                elif x == "-":
-                    an = an + "h"
-                    #await mem.edit(content = an)
-            else:
-                cou += 1
+            if x == ".":
+                an = an + "m"
+            elif x == "-":
+                an = an + "h"
+            elif x == "/":
+                an = an + "mmhmm"
+            elif x == " ":
+                an = an + " "
         await message.channel.send(an)
     elif mes[0:3] == "ade":
         adi = mes[4:-1]+mes[-1]
         mes = adi.split()
         an = ""
         #print(mes)
-        for x in range(0,len(mes)):
-            if mes[x] != "mmhmm":
-                for i in mes[x]:
+        for x in mes:
+            if x != "mmhmm":
+                for i in x:
                     if i == "m":
                         an = an + "."
                     elif i == "h":
                         an = an + "-"
-                #if x>0 and x<len(mes):
-                try:
-                    if mes[x+1] != "mmhmm":
-                        an = an + "   "
-                except:
-                    an = an
+                an = an + " "
             else:
-                an = an+"       "
+                an = an + "/ "
         #raise ValueError(an)
         an = decode(an,language = 'english').lower()
         await message.channel.send(an)
