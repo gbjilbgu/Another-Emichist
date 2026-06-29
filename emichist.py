@@ -24,7 +24,7 @@ async def on_message(message):
     elif mes[0:3] == "aen":
         adi = encode(mes[4:-1]+mes[-1],language = 'english')
         #print(adi)
-        #cou = 0
+        cou = 0
         an = ""
         #adi = adi.split()
         for x in adi:
@@ -36,6 +36,13 @@ async def on_message(message):
                 an = an + "mmhmm"
             elif x == " ":
                 an = an + " "
+            try:
+                if len(an)>= 6:
+                    if an[len(an)-6:len(an)] == " hhhh ":
+                        an = an[0:len(an)-6]
+                        an = an + " hmhm mmmm "
+            except:
+                continue
         await message.channel.send(an)
     elif mes[0:3] == "ade":
         adi = mes[4:-1]+mes[-1]
