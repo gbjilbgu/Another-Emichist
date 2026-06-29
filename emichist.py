@@ -78,7 +78,7 @@ async def on_message(message):
         await message.channel.send("mh mm hhm mmmm h mmhmm mm hh mh mmhmm hmmm hhh mhh mmhmm mh hmmm mm h")
         await message.channel.send("### Sadly, i have to bow now, bow")
         await message.channel.send("mmm mh hmm mhmm hmhh hhmmhh mmhmm mm mmhmm mmmm mh mmmh m mmhmm h hhh mmhmm hmmm hhh mhh mmhmm hm hhh mhh hhmmhh mmhmm hmmm hhh mhh")
-    elif mes[0:5] = "ahelp":
+    elif mes[0:5] == "ahelp":
         await message.channel.send("""### ----Hello my dear emichist, I am your assistant helping you on the road to the glorious mhm heaven----
         ### Bot commands:
         aen [text]: Transform normal text to emiscript
