@@ -22,7 +22,10 @@ async def on_message(message):
     if mes == "ahola":
         await message.channel.send("mmmm m mhmm mhmm hhh mmhmm hh hmhh mmhmm hmm m mh mhm mmhmm m hh mm hmhm mmmm mm mmm h mmhmm mmhm mhm mm m hm hmm mmhmm mmmm hhh mhh mhhhhm mmm mmhmm hhm hhh mm hm hhm mmhhmm")
     elif mes[0:3] == "aen":
-        adi = encode(mes[4:-1]+mes[-1],language = 'english')
+        if mes[-1] != "c":
+            adi = encode(mes[4:-1]+mes[-1],language = 'english')
+        else:
+            adi = encode(mes[4:-1],language = 'english')+" -.-."
         #print(adi)
         cou = 0
         an = ""
