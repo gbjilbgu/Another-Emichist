@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    print("Make "+bot.user.name+" moaned successfully!")
+    print("Make "+bot.user+" moaned successfully!")
 
 @bot.event
 async def on_message(message):
@@ -106,7 +106,7 @@ app = Flask('')
 
 @app.route('/')
 def home():
-    return "Make "+bot.user.name+" moaned successfully!"
+    return "Make "+bot.user+" moaned successfully!"
 
 def run():
   app.run(host='0.0.0.0', port=8080)
